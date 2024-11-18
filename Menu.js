@@ -1,24 +1,22 @@
-// Create the dropdown menu container
 const menuContainer = document.createElement("div");
 menuContainer.style.position = "fixed";
 menuContainer.style.bottom = "10px";
 menuContainer.style.right = "10px";
 menuContainer.style.zIndex = "99999";
-menuContainer.style.backgroundColor = "#000";  // Black background
+menuContainer.style.backgroundColor = "#000";
 menuContainer.style.padding = "10px";
 menuContainer.style.borderRadius = "5px";
-menuContainer.style.color = "#fff";  // White text
+menuContainer.style.color = "#fff";
 menuContainer.style.fontFamily = "Arial, sans-serif";
 menuContainer.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
 document.body.appendChild(menuContainer);
 
-// Create the dropdown and button
 const dropdown = document.createElement("select");
 dropdown.style.padding = "5px";
 dropdown.style.marginRight = "10px";
 dropdown.style.fontSize = "14px";
-dropdown.style.backgroundColor = "#333";  // Dark background for the dropdown
-dropdown.style.color = "#fff";  // White text color
+dropdown.style.backgroundColor = "#333";
+dropdown.style.color = "#fff";
 
 const options = [
   { text: "Choose an effect", value: "" },
@@ -41,14 +39,11 @@ runButton.style.color = "#fff";
 runButton.style.border = "none";
 runButton.style.borderRadius = "3px";
 
-// Append dropdown and button to the container
 menuContainer.appendChild(dropdown);
 menuContainer.appendChild(runButton);
 
-// Define the effects
 function runEffect(effect) {
   if (effect === "block") {
-    // Moving Block Effect
     const block = document.createElement("div");
     block.style.width = "50px";
     block.style.height = "50px";
@@ -73,7 +68,6 @@ function runEffect(effect) {
     }
     moveBlock();
   } else if (effect === "glitch") {
-    // Glitch Effect
     const elements = document.querySelectorAll("*");
     const intervalTime = 100;
 
@@ -102,7 +96,6 @@ function runEffect(effect) {
   }
 }
 
-// Attach the event listener to the button
 runButton.addEventListener("click", () => {
   const selectedEffect = dropdown.value;
   if (selectedEffect) {
